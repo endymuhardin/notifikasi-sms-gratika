@@ -17,8 +17,10 @@ public class SmsNotificationListener {
         try {
             SmsRequest sms = objectMapper.readValue(message, SmsRequest.class);
             logger.debug("====== SMS Request ======");
-            logger.debug("To : {}", sms.getDestinationNumber());
-            logger.debug("Content : {}", sms.getContent());
+            logger.debug("From     : {}", sms.getSenderId());
+            logger.debug("Password : {}", sms.getSenderPassword());
+            logger.debug("To       : {}", sms.getDestinationNumber());
+            logger.debug("Content  : {}", sms.getContent());
             logger.debug("====== SMS Request ======");
         } catch (Exception err) {
             logger.error(err.getMessage(), err);
