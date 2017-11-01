@@ -1,0 +1,11 @@
+[Unit]
+Description=Notifikasi via SMS
+After=syslog.target
+
+[Service]
+User=gratikanotification
+ExecStart=/home/gratikanotification/notifikasi-sms-gratika.jar
+SuccessExitStatus=143
+
+[Install]
+WantedBy=multi-user.target
